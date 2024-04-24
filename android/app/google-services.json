@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "444792579265",
+    "project_id": "curriculum-vitae-ee13b",
+    "storage_bucket": "curriculum-vitae-ee13b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:444792579265:android:b1715cd7eddd84b3792040",
+        "android_client_info": {
+          "package_name": "com.example.cv"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDdBBOUKiX9F_YY_Sshfj1fhgS2E2OQihA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
