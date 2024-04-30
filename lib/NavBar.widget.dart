@@ -57,10 +57,23 @@ class _NavBarState extends State<NavBar> {
                           ),
                         ],
                       ),
+
                     ),
+
                     Expanded(
                       child: Column(
                         children: [
+                          ListTile(
+                            leading: Icon(Icons.person, color: Colors.black),
+                            title: Text(
+                              'Profile',
+                              style: TextStyle(color: Colors.black),
+                            ),
+                            onTap: () {
+                              Navigator.pop(context);
+                              Navigator.pushNamed(context, "/profile");
+                            },
+                          ),
                           ListTile(
                             leading: Icon(Icons.school, color: Colors.black),
                             title: Text(
@@ -95,33 +108,60 @@ class _NavBarState extends State<NavBar> {
                             },
                           ),
                           ListTile(
-                            leading: Icon(Icons.home, color: Colors.black),
+                            leading: Icon(Icons.workspace_premium, color: Colors.black),
                             title: Text(
                               'Certificats',
                               style: TextStyle(color: Colors.black),
                             ),
                             onTap: () {
-                              // Add your navigation logic here
+                              Navigator.pop(context);
+                              Navigator.pushNamed(context, '/Certificat');
                             },
                           ),
                           ListTile(
-                            leading: Icon(Icons.home, color: Colors.black),
+                            leading: Icon(Icons.workspaces, color: Colors.black),
                             title: Text(
-                              'Manifestations',
+                              'Projets',
                               style: TextStyle(color: Colors.black),
                             ),
                             onTap: () {
-                              // Add your navigation logic here
+                              Navigator.pop(context);
+                              Navigator.pushNamed(context, '/projet');
+
                             },
                           ),
                           ListTile(
-                            leading: Icon(Icons.logout, color: Colors.black),
+                            leading: Icon(Icons.flag, color: Colors.black),
                             title: Text(
-                              'Déconnexion',
+                              'Langues',
                               style: TextStyle(color: Colors.black),
                             ),
                             onTap: () {
-                              // Add your navigation logic here
+                              Navigator.pop(context);
+                              Navigator.pushNamed(context, '/langues');
+                            },
+                          ),
+                          ListTile(
+                            leading: Icon(Icons.location_on, color: Colors.black),
+                            title: Text(
+                              'Localisation',
+                              style: TextStyle(color: Colors.black),
+                            ),
+                            onTap: () {
+                              Navigator.pop(context);
+                              Navigator.pushNamed(context, '/localisation');
+                            },
+                          ),
+                          ListTile(
+                            leading: Icon(Icons.document_scanner, color: Colors.black),
+                            title: Text(
+                              'CV',
+                              style: TextStyle(color: Colors.black),
+                            ),
+                            onTap: () {
+                              Navigator.pop(context);
+                              Navigator.pushNamed(context, '/CV');
+
                             },
                           ),
                         ],

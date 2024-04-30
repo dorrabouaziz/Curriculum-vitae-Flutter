@@ -71,8 +71,8 @@ class Experience extends StatelessWidget {
                       Center(
                         child: Image.asset(
                           'assets/attes1.JPG',
-                          height: 350,
-                          width: 350,
+                          height: 280,
+                          width: 340,
                         ),
                       ),
                     ],
@@ -132,8 +132,8 @@ class Experience extends StatelessWidget {
                       Center(
                         child: Image.asset(
                           'assets/attes2.JPG',
-                          height: 350,
-                          width: 350,
+                          height: 280,
+                          width: 340,
                         ),
                       ),
                     ],
@@ -234,7 +234,7 @@ class Experience extends StatelessWidget {
                                 "Localité : Sfax",
                                 style: TextStyle(fontSize: 14),
                               ),
-                              SizedBox(width: 190),
+                              SizedBox(width: 130),
                               Text(
                                 "Date :2024",
                                 style: TextStyle(fontSize: 14),
@@ -242,7 +242,7 @@ class Experience extends StatelessWidget {
                             ],
                           ),
                           SizedBox(height: 10),
-                          Text("- Application Web Full-Stack intitulé Parc informatique\n"
+                          Text("- Application Web Full-Stack intitulé Parc \n informatique\n"
                               "- Backend : SpringBoot \n"
                               "- Frontend : Angular\n"
                               "- Base de données : SQL  MySQL Workbench\n"
@@ -251,13 +251,13 @@ class Experience extends StatelessWidget {
                           ),
                         ],
                       ),
-                      SizedBox(height: 20),
+
 
                       Center(
                         child: Image.asset(
                           'assets/chargement.gif',
-                          height: 350,
-                          width: 350,
+                          height: 280,
+                          width: 340,
                         ),
                       ),
                     ],

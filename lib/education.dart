@@ -39,7 +39,7 @@ class Education extends StatelessWidget {
                           "Lycée 15 Novembre 1956",
                           style: TextStyle(fontSize: 14),
                         ),
-                    SizedBox(width: 105),
+                    SizedBox(width: 80),
                     Text(
                       "2018-2019",
                       style: TextStyle(fontSize: 14),
@@ -83,7 +83,7 @@ class Education extends StatelessWidget {
                           style: TextStyle(fontSize: 14),
                         ),
 
-                    SizedBox(width: 80),
+                    SizedBox(width: 70),
                     Text(
                       "2019-2022",
                       style: TextStyle(fontSize: 14),
@@ -122,11 +122,11 @@ class Education extends StatelessWidget {
                     Row(
                       children: [
                         Text(
-                          "Institut international de technologie",
+                          "IIT",
                           style: TextStyle(fontSize: 14),
                         ),
 
-                    SizedBox(width: 40),
+                    SizedBox(width: 220),
                     Text(
                       "2022-2025",
                       style: TextStyle(fontSize: 14),

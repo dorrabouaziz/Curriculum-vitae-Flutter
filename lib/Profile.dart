@@ -1,74 +1,188 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:cv/NavBar.widget.dart';
 
 class Profile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SingleChildScrollView(
-        child: Container(
-          height: MediaQuery.of(context).size.height,
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage("assets/profile.jpg"),
-              fit: BoxFit.cover,
+
+      return Scaffold(
+        appBar: AppBar(
+          title: Text(
+            'Profile',
+            style: TextStyle(
+              fontSize: 25,
+              color: Colors.white,
             ),
           ),
-          child: Padding(
-            padding: EdgeInsets.only(top: 20.0),
-            child: Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  ClipOval(
-                    child: Image.asset(
-                      "assets/dorra.jpg",
-                      width: 200,
-                      height: 200,
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                  SizedBox(height: 20),
-                  Container(
-                    margin: EdgeInsets.symmetric(horizontal: 30),
-                    decoration: BoxDecoration(
-                      color: Color(0xFFCE8F8A), // Couleur de fond de la carte
-                      borderRadius: BorderRadius.circular(10.0), // Coins arrondis de la carte
-                    ),
-                    child: Padding(
-                      padding: EdgeInsets.all(20),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            // Texte à afficher
-                            "Etudiante ingénieure en informatique enthousiaste et créative, à la recherche de défis stimulants et "
-                                "d'opportunités d'apprentissage pour développer mes compétences et contribuer à la conception de "
-                                "solutions innovantes.",
-                            style: TextStyle(fontSize: 20),
-                            textAlign: TextAlign.justify,
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  SizedBox(height:20),
-                  TextButton(
-                    onPressed: () {
-                      Navigator.pop(context);
-                      Navigator.pushNamed(context, '/authentification');
-                    },
-                    child: Text("Cliquer ici pour plus de détails", style: TextStyle(
-                      color: Colors.black,
-                      decoration: TextDecoration.underline
+          backgroundColor: Color(0xFFCE8F8A),
 
-                    )),
+        ),
+        drawer: NavBar(),
+        body: Column(
+
+
+          children: [
+            Container(
+              padding: EdgeInsets.all(20),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  CircleAvatar(
+                    backgroundImage: AssetImage('assets/dorra.jpg'),
+                    radius: 40,
+                  ),
+                  SizedBox(width: 20),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Dorra Bouaziz',
+                          style: TextStyle(
+                            fontSize: 24,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        SizedBox(height: 10),
+                        Text(
+                          "Etudiante ingénieure en informatique enthousiaste et créative, à la recherche de défis stimulants et "
+                              "d'opportunités d'apprentissage pour développer mes compétences et contribuer à la conception de "
+                              "solutions innovantes.",
+                          style: TextStyle(
+                            fontSize: 17,
+                            color: Colors.black,
+                          ),
+                          textAlign: TextAlign.justify,
+                        ),
+                        SizedBox(height: 20),
+                        Divider(thickness: 1, color: Colors.black),
+                        SizedBox(height: 20),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Row(
+                                  children: [
+                                    Icon(Icons.location_city),
+                                    Text(
+                                      ' Route El Ain ',
+                                      style: TextStyle(
+                                        fontSize: 17,
+                                        color: Colors.black,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                SizedBox(height: 10),
+                                Row(
+                                  children: [
+                                    Icon(Icons.phone),
+                                    Text(
+                                      ' 51 380 720',
+                                      style: TextStyle(
+                                        fontSize: 17,
+                                        color: Colors.black,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                SizedBox(height: 10),
+                                Row(
+                                  children: [
+                                    Icon(Icons.date_range),
+                                    Text(
+                                      ' 03/06/2000',
+                                      style: TextStyle(
+                                        fontSize: 17,
+                                        color: Colors.black,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                SizedBox(height: 10),
+                                Row(
+                                  children: [
+                                    Icon(Icons.location_on),
+                                    Text(
+                                      ' Tunis',
+                                      style: TextStyle(
+                                        fontSize: 17,
+                                        color: Colors.black,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                SizedBox(height: 10),
+                                Column(
+
+                                  children: [
+                                    Row(
+                                      children: [
+                                        Icon(Icons.email),
+                                        Text(
+                                          ' bouazizdorra7@gmail.com',
+                                          style: TextStyle(
+                                            fontSize: 17,
+                                            color: Colors.black,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    SizedBox(height: 30),
+                                    Center(
+                                      child: Row(
+                                        children: [
+                                          GestureDetector(
+                                            onTap: () {
+                                              _launchURL( 'https://www.linkedin.com/in/dorra-bouaziz');
+                                            },
+                                            child: Image.asset(
+                                              'assets/linkedin.jpg',
+                                              width: 60,
+                                              height: 60,
+                                            ),
+                                          ),
+                                          SizedBox(width: 20),
+                                          GestureDetector(
+                                            onTap: () {
+                                              _launchURL('https://github.com/DorraBouaziz');
+                                            },
+                                            child: Image.asset(
+                                              'assets/github.png',
+                                              width: 70,
+                                              height: 70,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
                 ],
               ),
             ),
-          ),
+          ],
         ),
-      ),
+
     );
+  }
+
+  _launchURL(String url) async {
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
   }
 }
