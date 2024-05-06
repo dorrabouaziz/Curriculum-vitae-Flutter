@@ -34,14 +34,33 @@ class Projet extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           SizedBox(height: 20),
-           Text(
-              "Cliquer sur les images pour voir \n"
-             "          les détails des projet",
+          Container(
+            margin: EdgeInsets.symmetric(vertical: 20, horizontal: 40),
+            padding: EdgeInsets.all(20),
+            decoration: BoxDecoration(
+              color: Color(0xFFF5EFE6), // Couleur de fond
+              borderRadius: BorderRadius.circular(20), // Bordures arrondies
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.grey.withOpacity(0.5), // Couleur de l'ombre
+                  spreadRadius: 5, // Étendue de l'ombre
+                  blurRadius: 7, // Flou de l'ombre
+                  offset: Offset(0, 3), // Décalage de l'ombre
+                ),
+              ],
+            ),
+            child: Text(
+              "Cliquer sur les images pour voir "
+                  "les détails des projets",
               style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
+                color: Colors.black, // Couleur du texte
               ),
+              textAlign: TextAlign.center, // Alignement centré du texte
             ),
+          ),
+
           Expanded(
             child: GridView.builder(
               padding: EdgeInsets.all(10),
