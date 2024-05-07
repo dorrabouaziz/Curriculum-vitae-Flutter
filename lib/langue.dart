@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 class Language {
   final String name;
   final String level;
+  final String description;
 
   // Calculate the number of filled circles based on level
   int get filledCircles {
@@ -19,25 +20,29 @@ class Language {
     }
   }
 
-  Language(this.name, this.level);
-
-// Get the appropriate flag icon based on language name (add this method if needed)
-// ...
+  Language(this.name, this.level, this.description);
 }
 
 class LanguagePage extends StatefulWidget {
+  final VoidCallback toggleTheme;
+
+  LanguagePage({required this.toggleTheme});
+
   @override
-  _CVPageState createState() => _CVPageState();
+  _CVPageState createState() => _CVPageState(toggleTheme: toggleTheme);
 }
 
 class _CVPageState extends State<LanguagePage> {
   final List<Language> languages = [
-    Language('Arabe', 'Avancé'),
-    Language('Français', 'Intermédiaire'),
-    Language('Anglais', 'Débutant'),
+    Language('Arabe', 'Avancé', 'C1 et C2: utilisateur expérimenté'),
+    Language('Français', 'Intermédiaire', 'B1 et B2: utilisateur indépendant'),
+    Language('Anglais', 'Débutant', 'A1 et A2: utilisateur de base'),
   ];
 
   late Map<String, Color> colorMap;
+  final VoidCallback toggleTheme;
+
+  _CVPageState({required this.toggleTheme});
 
   @override
   void initState() {
@@ -57,7 +62,7 @@ class _CVPageState extends State<LanguagePage> {
             style: TextStyle(fontSize: 25, color: Colors.white)),
         backgroundColor: Color(0xFFCE8F8A),
       ),
-      drawer: NavBar(),
+      drawer: NavBar(toggleTheme),
       body: Column(
         children: [
           SizedBox(height: 3),
@@ -81,11 +86,38 @@ class _CVPageState extends State<LanguagePage> {
   }
 }
 
-class _LanguageCube extends StatelessWidget {
+class _LanguageCube extends StatefulWidget {
   final Language language;
   final Map<String, Color> colorMap;
 
   const _LanguageCube({required this.language, required this.colorMap});
+
+  @override
+  __LanguageCubeState createState() => __LanguageCubeState();
+}
+
+class __LanguageCubeState extends State<_LanguageCube>
+    with SingleTickerProviderStateMixin {
+  late AnimationController _controller;
+  late Animation<double> _animation;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = AnimationController(
+      vsync: this,
+      duration: Duration(milliseconds: 1000), // Adjust animation duration here
+    );
+    _animation = Tween<double>(begin: 0.0, end: widget.language.filledCircles.toDouble())
+        .animate(_controller);
+    _controller.forward();
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -100,24 +132,40 @@ class _LanguageCube extends StatelessWidget {
       ),
       child: Row(
         children: [
-          // Add flag icon here (modify based on your chosen package)
-          Icon(
-            Icons.flag, // Replace with your flag icon
-            size: 20.0,
+          // Flag icon
+          Row(
+            children: [
+              Icon(
+                Icons.flag, // Replace with your flag icon
+                size: 20.0,
+              ),
+              SizedBox(width: 10),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    widget.language.name,
+                    style:
+                    TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
+                  ),
+                  Text(
+                    widget.language.level,
+                    style: TextStyle(fontSize: 16.0),
+                  ),
+                  Text(
+                    widget.language.description,
+                    style: TextStyle(fontSize: 12.0,color: Colors.grey),
+                  ),
+                ],
+              ),
+            ],
           ),
           SizedBox(width: 10.0),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  language.name,
-                  style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
-                ),
-                Text(
-                  language.level,
-                  style: TextStyle(fontSize: 16.0),
-                ),
+
               ],
             ),
           ),
@@ -125,15 +173,19 @@ class _LanguageCube extends StatelessWidget {
           Row(
             children: List.generate(
               5,
-              (index) => Container(
-                width: 20.0,
-                height: 20.0,
-                margin: EdgeInsets.symmetric(horizontal: 2.0),
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: index < language.filledCircles
-                      ? colorMap[language.level.toLowerCase()] ?? Colors.grey
-                      : Colors.transparent,
+                  (index) => AnimatedBuilder(
+                animation: _controller,
+                builder: (context, child) => Container(
+                  width: 20.0,
+                  height: 20.0,
+                  margin: EdgeInsets.symmetric(horizontal: 2.0),
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: index < _animation.value
+                        ? widget.colorMap[widget.language.level.toLowerCase()] ??
+                        Colors.grey
+                        : Colors.transparent,
+                  ),
                 ),
               ),
             ),

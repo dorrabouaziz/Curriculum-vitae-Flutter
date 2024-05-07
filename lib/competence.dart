@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:cv/NavBar.widget.dart';
 
 class Competence extends StatelessWidget {
+  final VoidCallback toggleTheme;
+
+  Competence({required this.toggleTheme});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,7 +19,7 @@ class Competence extends StatelessWidget {
         ),
         backgroundColor: Color(0xFFCE8F8A),
       ),
-      drawer: NavBar(),
+      drawer: NavBar(toggleTheme),
       body: ListView(
         padding: EdgeInsets.all(20),
         children: [

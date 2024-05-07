@@ -3,6 +3,9 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:cv/NavBar.widget.dart';
 
 class Profile extends StatelessWidget {
+  final VoidCallback toggleTheme;
+
+  Profile({required this.toggleTheme});
   @override
   Widget build(BuildContext context) {
 
@@ -18,7 +21,7 @@ class Profile extends StatelessWidget {
         backgroundColor: Color(0xFFCE8F8A),
 
       ),
-      drawer: NavBar(),
+      drawer: NavBar(toggleTheme),
       body: Column(
 
 
@@ -235,6 +238,7 @@ class Profile extends StatelessWidget {
           ),
         ],
       ),
+      
     );
   }
 

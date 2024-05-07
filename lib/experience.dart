@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:cv/NavBar.widget.dart';
 
 class Experience extends StatelessWidget {
+  final VoidCallback toggleTheme;
+
+  Experience({required this.toggleTheme});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,7 +20,7 @@ class Experience extends StatelessWidget {
         ),
       ),
 
-      drawer: NavBar(),
+      drawer: NavBar(toggleTheme),
       body: ListView(
         scrollDirection: Axis.horizontal,
           children: [

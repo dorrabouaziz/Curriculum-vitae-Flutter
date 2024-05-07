@@ -3,6 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_cached_pdfview/flutter_cached_pdfview.dart';
 
 class CV extends StatelessWidget {
+  final VoidCallback toggleTheme;
+
+  CV({required this.toggleTheme});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,22 +20,23 @@ class CV extends StatelessWidget {
         ),
         backgroundColor: Color(0xFFCE8F8A),
       ),
-      drawer: NavBar(),
-      body: Expanded(
-        child: PDF(
-          enableSwipe: true,
-          swipeHorizontal: true,
-          autoSpacing: false,
-          pageFling: false,
-          pageSnap: true,
-          onError: (error) {
-            print(error.toString());
-          },
-          onPageError: (page, error) {
-            print('$page: ${error.toString()}');
-          },
-        ).fromAsset('assets/CV.pdf'),
-      ),
-    );
+      drawer: NavBar(toggleTheme),
+      body : PDF(
+
+              enableSwipe: true,
+              swipeHorizontal: true,
+              autoSpacing: false,
+              pageFling: false,
+              pageSnap: true,
+
+              onError: (error) {
+                print(error.toString());
+              },
+              onPageError: (page, error) {
+                print('$page: ${error.toString()}');
+              },
+            ).fromAsset('assets/CV.pdf'),
+          );
+
   }
 }

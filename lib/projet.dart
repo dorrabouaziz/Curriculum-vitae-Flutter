@@ -3,6 +3,9 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:cv/NavBar.widget.dart';
 
 class Projet extends StatelessWidget {
+  final VoidCallback toggleTheme;
+
+  Projet({required this.toggleTheme});
   final List<String> projetImages = [
     'assets/fo2.JPG',
     'assets/industry.jpg',
@@ -29,7 +32,7 @@ class Projet extends StatelessWidget {
         ),
         backgroundColor: Color(0xFFCE8F8A),
       ),
-      drawer: NavBar(),
+      drawer: NavBar(toggleTheme),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [

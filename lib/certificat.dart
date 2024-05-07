@@ -3,6 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:cv/NavBar.widget.dart';
 
 class Certificat extends StatelessWidget {
+  final VoidCallback toggleTheme;
+
+  Certificat({required this.toggleTheme});
+
   final List<String> images = [
     'assets/certif1.JPG',
     'assets/img.png',
@@ -22,7 +26,7 @@ class Certificat extends StatelessWidget {
         ),
         backgroundColor: Color(0xFFCE8F8A),
       ),
-      drawer: NavBar(),
+      drawer: NavBar(toggleTheme),
       body: Center(
         child: CarouselSlider(
           options: CarouselOptions(

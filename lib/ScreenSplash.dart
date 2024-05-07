@@ -3,6 +3,9 @@ import 'package:cv/Profile.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {
+  final VoidCallback toggleTheme;
+
+  SplashScreen({required this.toggleTheme});
   @override
   _SplashScreenState createState() => _SplashScreenState();
 }
@@ -23,7 +26,7 @@ class _SplashScreenState extends State<SplashScreen> {
           // Naviguez vers l'écran principal de votre application (par exemple, votre écran de CV)
           Navigator.of(context).pushReplacement(
             MaterialPageRoute(
-              builder: (context) => Profile(),
+              builder: (context) => Profile(toggleTheme: widget.toggleTheme),
             ),
           );
         }
