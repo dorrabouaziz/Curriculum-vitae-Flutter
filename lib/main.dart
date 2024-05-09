@@ -33,10 +33,13 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
+    // Obtenez le thème actuel
+    ThemeData currentTheme = _isDarkMode ? AppThemes.darkTheme : AppThemes.lightTheme;
+
     return MaterialApp(
       title: 'Curriculm Vitae',
       debugShowCheckedModeBanner: false,
-      theme: _isDarkMode ? ThemeData.dark() : ThemeData.light(),
+      theme: currentTheme,
       home: SplashScreen(toggleTheme: _toggleTheme),
       routes: {
         '/profile': (context) => Profile(toggleTheme: _toggleTheme),

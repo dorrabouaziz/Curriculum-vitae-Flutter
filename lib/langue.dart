@@ -56,6 +56,7 @@ class _CVPageState extends State<LanguagePage> {
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       appBar: AppBar(
         title: Text('Langues',
@@ -121,6 +122,12 @@ class __LanguageCubeState extends State<_LanguageCube>
 
   @override
   Widget build(BuildContext context) {
+    // Obtenez le thème actuel de l'application
+    ThemeData currentTheme = Theme.of(context);
+
+    // Déterminez la couleur du texte en fonction du thème actuel
+    Color iconColor = currentTheme.brightness == Brightness.dark ? Colors.black : Colors.black;
+
     return Container(
       padding: const EdgeInsets.all(10.0),
       decoration: BoxDecoration(
@@ -138,6 +145,7 @@ class __LanguageCubeState extends State<_LanguageCube>
               Icon(
                 Icons.flag, // Replace with your flag icon
                 size: 20.0,
+                color: iconColor,
               ),
               SizedBox(width: 10),
               Column(

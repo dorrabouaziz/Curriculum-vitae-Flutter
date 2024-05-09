@@ -8,6 +8,12 @@ class Education extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Obtenez le thème actuel de l'application
+    ThemeData currentTheme = Theme.of(context);
+
+    // Déterminez la couleur du texte en fonction du thème actuel
+    Color iconColor = currentTheme.brightness == Brightness.dark ? Colors.black : Colors.black;
+
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -30,7 +36,8 @@ class Education extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Icon(Icons.school),
+                    Icon(Icons.school,
+                    color: iconColor),
                     Text(
                       "Baccalauréat en sciences expérimentales",
                       style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
@@ -74,7 +81,8 @@ class Education extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Icon(Icons.school),
+                    Icon(Icons.school ,
+                    color: iconColor),
                     Text(
                       "Licence nationale en ingénerie des systèmes informatiques",
                       style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
@@ -115,7 +123,7 @@ class Education extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Icon(Icons.school),
+                    Icon(Icons.school , color: iconColor),
 
                     Text(
 

@@ -8,6 +8,12 @@ class Profile extends StatelessWidget {
   Profile({required this.toggleTheme});
   @override
   Widget build(BuildContext context) {
+    // Obtenez le thème actuel de l'application
+    ThemeData currentTheme = Theme.of(context);
+
+    // Déterminez la couleur du texte en fonction du thème actuel
+    Color textColor = currentTheme.brightness == Brightness.dark ? Colors.white : Colors.black;
+
 
     return Scaffold(
       appBar: AppBar(
@@ -45,6 +51,7 @@ class Profile extends StatelessWidget {
                         style: TextStyle(
                           fontSize: 24,
                           fontWeight: FontWeight.bold,
+                          color: textColor,
                         ),
                       ),
                       SizedBox(height: 10),
@@ -54,7 +61,8 @@ class Profile extends StatelessWidget {
                             "solutions innovantes.",
                         style: TextStyle(
                           fontSize: 17,
-                          color: Colors.black,
+                          color: textColor,
+
                         ),
                         textAlign: TextAlign.justify,
                       ),
@@ -75,7 +83,7 @@ class Profile extends StatelessWidget {
                                     ' Route El Ain ',
                                     style: TextStyle(
                                       fontSize: 17,
-                                      color: Colors.black,
+                                        color: textColor,
                                     ),
                                   ),
                                 ],
@@ -88,7 +96,7 @@ class Profile extends StatelessWidget {
                                     ' 51 380 720',
                                     style: TextStyle(
                                       fontSize: 17,
-                                      color: Colors.black,
+                                      color: textColor,
                                     ),
                                   ),
                                 ],
@@ -101,7 +109,7 @@ class Profile extends StatelessWidget {
                                     ' 03/06/2000',
                                     style: TextStyle(
                                       fontSize: 17,
-                                      color: Colors.black,
+                                      color: textColor,
                                     ),
                                   ),
                                 ],
@@ -114,7 +122,7 @@ class Profile extends StatelessWidget {
                                     ' Tunis',
                                     style: TextStyle(
                                       fontSize: 17,
-                                      color: Colors.black,
+                                      color: textColor,
                                     ),
                                   ),
                                 ],
@@ -130,7 +138,7 @@ class Profile extends StatelessWidget {
                                         ' bouazizdorra7@gmail.com',
                                         style: TextStyle(
                                           fontSize: 17,
-                                          color: Colors.black,
+                                          color: textColor,
                                         ),
                                       ),
                                     ],
@@ -165,32 +173,8 @@ class Profile extends StatelessWidget {
                                   ),
                                 ],
                               ),
-                              SizedBox(height: 10),
-                              Row(
-                                children: [
-                                  GestureDetector(
-                                    onTap: () {
-                                      _launchURL('tel:51380720');
-                                    },
-                                    child: Icon(
-                                      Icons.phone,
-                                      size: 30,
-                                      color: Colors.white,
-                                    ),
-                                  ),
+                              SizedBox(height: 30),
 
-                                  GestureDetector(
-                                    onTap: () {
-                                      _launchURL('mailto:bouazizdorra7@gmail.com');
-                                    },
-                                    child: Icon(
-                                      Icons.email,
-                                      size: 30,
-                                      color: Colors.white,
-                                    ),
-                                  ),
-                                ],
-                              ),
                             ],
                           ),
                         ],

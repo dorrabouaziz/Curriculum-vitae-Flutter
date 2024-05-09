@@ -8,6 +8,12 @@ class Experience extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Obtenez le thème actuel de l'application
+    ThemeData currentTheme = Theme.of(context);
+
+    // Déterminez la couleur du texte en fonction du thème actuel
+    Color iconColor = currentTheme.brightness == Brightness.dark ? Colors.black : Colors.black;
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color(0xFFCE8F8A),
@@ -36,7 +42,7 @@ class Experience extends StatelessWidget {
                     children: [
                       Row(
                         children: [
-                          Icon(Icons.work),
+                          Icon(Icons.work , color: iconColor),
 
                       Text(
                         " Stage à Smart Ways Innovation",
@@ -97,7 +103,7 @@ class Experience extends StatelessWidget {
                     children: [
                       Row(
                         children: [
-                          Icon(Icons.work),
+                          Icon(Icons.work , color: iconColor),
 
                           Text(
                             " Stage à Smart Ways Innovation",
@@ -160,7 +166,7 @@ class Experience extends StatelessWidget {
                     children: [
                       Row(
                         children: [
-                          Icon(Icons.work),
+                          Icon(Icons.work , color: iconColor),
 
                           Text(
                             " Stage à Clinisys",
@@ -220,7 +226,7 @@ class Experience extends StatelessWidget {
                     children: [
                       Row(
                         children: [
-                          Icon(Icons.work),
+                          Icon(Icons.work , color: iconColor),
 
                           Text(
                             " Stage à Freedom Of Dev Services",
