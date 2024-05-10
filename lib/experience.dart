@@ -13,6 +13,7 @@ class Experience extends StatelessWidget {
 
     // Déterminez la couleur du texte en fonction du thème actuel
     Color iconColor = currentTheme.brightness == Brightness.dark ? Colors.black : Colors.black;
+    Color textColor = currentTheme.brightness == Brightness.dark ? Colors.black : Colors.black;
 
     return Scaffold(
       appBar: AppBar(
@@ -46,7 +47,7 @@ class Experience extends StatelessWidget {
 
                       Text(
                         " Stage à Smart Ways Innovation",
-                        style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                        style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: textColor),
                       ),
                         ],
                       ),
@@ -58,12 +59,12 @@ class Experience extends StatelessWidget {
                             children: [
                               Text(
                                 "Localité : Sfax",
-                                style: TextStyle(fontSize: 14),
+                                style: TextStyle(fontSize: 14 , color: textColor),
                               ),
                               SizedBox(width: 160),
                               Text(
                                 "Date :2021",
-                                style: TextStyle(fontSize: 14),
+                                style: TextStyle(fontSize: 14, color: textColor),
                               ),
                             ],
                           ),
@@ -72,7 +73,9 @@ class Experience extends StatelessWidget {
                               "- Développement Embarqué : Programmation \n en utilisant Python et Langage C \n"
                               "- Développement Mobile : Une application Android \n avec la plateforme Google Firebase Cloud \n"
                               "- Développement Web : Une application Web \n sur le Framework Angular avec Firebase Cloud \n"
-                              "- Prototype",
+                              "- Prototype", style: TextStyle(
+                            color: textColor
+                          ),
 
                           ),
                         ],
@@ -107,7 +110,7 @@ class Experience extends StatelessWidget {
 
                           Text(
                             " Stage à Smart Ways Innovation",
-                            style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                            style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: textColor),
                           ),
                         ],
                       ),
@@ -119,12 +122,12 @@ class Experience extends StatelessWidget {
                             children: [
                               Text(
                                 "Localité : Sfax",
-                                style: TextStyle(fontSize: 14),
+                                style: TextStyle(fontSize: 14, color: textColor),
                               ),
                               SizedBox(width: 160),
                               Text(
                                 "Date :2022",
-                                style: TextStyle(fontSize: 14),
+                                style: TextStyle(fontSize: 14, color: textColor),
                               ),
                             ],
                           ),
@@ -133,7 +136,9 @@ class Experience extends StatelessWidget {
                               "- Développement Embarqué  \n"
                               "- Développement Mobile : Une application Android \n avec la plateforme Google Firebase Cloud \n"
                               "- Développement Web : Une application Web \n sur le Framework Angular avec Firebase Cloud \n"
-                              "- Prototype",
+                              "- Prototype", style: TextStyle(
+                              color: textColor
+                          ),
 
                           ),
                         ],
@@ -170,7 +175,7 @@ class Experience extends StatelessWidget {
 
                           Text(
                             " Stage à Clinisys",
-                            style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                            style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: textColor),
                           ),
                         ],
                       ),
@@ -182,19 +187,21 @@ class Experience extends StatelessWidget {
                             children: [
                               Text(
                                 "Localité : Sfax",
-                                style: TextStyle(fontSize: 14),
+                                style: TextStyle(fontSize: 14, color: textColor),
                               ),
                               SizedBox(width: 150),
                               Text(
                                 "Date :2023",
-                                style: TextStyle(fontSize: 14),
+                                style: TextStyle(fontSize: 14, color: textColor),
                               ),
                             ],
                           ),
                           SizedBox(height: 10),
                           Text("- Application Web Full-Stack intitulé Appel d'offre\n"
                               "- Backend : SpringBoot \n"
-                              "- Base de données : SQL",
+                              "- Base de données : SQL", style: TextStyle(
+                            color: textColor
+                          ),
 
                           ),
                         ],
@@ -230,7 +237,7 @@ class Experience extends StatelessWidget {
 
                           Text(
                             " Stage à Freedom Of Dev Services",
-                            style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                            style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: textColor),
                           ),
                         ],
                       ),
@@ -242,12 +249,12 @@ class Experience extends StatelessWidget {
                             children: [
                               Text(
                                 "Localité : Sfax",
-                                style: TextStyle(fontSize: 14),
+                                style: TextStyle(fontSize: 14, color: textColor),
                               ),
                               SizedBox(width: 130),
                               Text(
                                 "Date :2024",
-                                style: TextStyle(fontSize: 14),
+                                style: TextStyle(fontSize: 14, color: textColor),
                               ),
                             ],
                           ),
@@ -256,7 +263,9 @@ class Experience extends StatelessWidget {
                               "- Backend : SpringBoot \n"
                               "- Frontend : Angular\n"
                               "- Base de données : SQL  MySQL Workbench\n"
-                              "- Cadre de travail : Scrum",
+                              "- Cadre de travail : Scrum", style: TextStyle(
+                              color: textColor
+                          ),
 
                           ),
                         ],

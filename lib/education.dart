@@ -13,6 +13,7 @@ class Education extends StatelessWidget {
 
     // Déterminez la couleur du texte en fonction du thème actuel
     Color iconColor = currentTheme.brightness == Brightness.dark ? Colors.black : Colors.black;
+    Color textColor = currentTheme.brightness == Brightness.dark ? Colors.black : Colors.black;
 
     return Scaffold(
       appBar: AppBar(
@@ -40,7 +41,7 @@ class Education extends StatelessWidget {
                     color: iconColor),
                     Text(
                       "Baccalauréat en sciences expérimentales",
-                      style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                      style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: textColor),
                     ),
 
                     SizedBox(height: 20),
@@ -48,12 +49,12 @@ class Education extends StatelessWidget {
                       children: [
                         Text(
                           "Lycée 15 Novembre 1956",
-                          style: TextStyle(fontSize: 14),
+                          style: TextStyle(fontSize: 14, color: textColor),
                         ),
                     SizedBox(width: 80),
                     Text(
                       "2018-2019",
-                      style: TextStyle(fontSize: 14),
+                      style: TextStyle(fontSize: 14 , color: textColor),
                     ),
                       ],
                     ),
@@ -85,20 +86,20 @@ class Education extends StatelessWidget {
                     color: iconColor),
                     Text(
                       "Licence nationale en ingénerie des systèmes informatiques",
-                      style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                      style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: textColor),
                     ),
                     SizedBox(height: 20),
                     Row(
                       children: [
                         Text(
                           "Faculté des sciences de Sfax",
-                          style: TextStyle(fontSize: 14),
+                          style: TextStyle(fontSize: 14, color: textColor),
                         ),
 
                     SizedBox(width: 70),
                     Text(
                       "2019-2022",
-                      style: TextStyle(fontSize: 14),
+                      style: TextStyle(fontSize: 14 , color: textColor),
                     ),
                       ],
                     ),
@@ -128,20 +129,20 @@ class Education extends StatelessWidget {
                     Text(
 
                       "Ingénerie Génie logiciel et informatique décisionnel",
-                      style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                      style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: textColor),
                     ),
                     SizedBox(height: 20),
                     Row(
                       children: [
                         Text(
                           "IIT",
-                          style: TextStyle(fontSize: 14),
+                          style: TextStyle(fontSize: 14, color: textColor),
                         ),
 
                     SizedBox(width: 220),
                     Text(
                       "2022-2025",
-                      style: TextStyle(fontSize: 14),
+                      style: TextStyle(fontSize: 14, color: textColor),
                     ),
                       ],
                     ),

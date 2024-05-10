@@ -163,9 +163,9 @@ class Profile extends StatelessWidget {
                                             _launchURL('https://github.com/DorraBouaziz');
                                           },
                                           child: Image.asset(
-                                            'assets/github.png',
-                                            width: 70,
-                                            height: 70,
+                                            'assets/git.jpg',
+                                            width: 60,
+                                            height: 60,
                                           ),
                                         ),
                                       ],

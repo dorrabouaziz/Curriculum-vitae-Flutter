@@ -154,11 +154,11 @@ class __LanguageCubeState extends State<_LanguageCube>
                   Text(
                     widget.language.name,
                     style:
-                    TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
+                    TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold, color: Colors.black),
                   ),
                   Text(
                     widget.language.level,
-                    style: TextStyle(fontSize: 16.0),
+                    style: TextStyle(fontSize: 16.0 , color: Colors.black),
                   ),
                   Text(
                     widget.language.description,

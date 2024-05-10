@@ -6,8 +6,11 @@ class Competence extends StatelessWidget {
 
   Competence({required this.toggleTheme});
 
+
+
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -62,6 +65,7 @@ class Competence extends StatelessWidget {
           _buildSkillCard(
             skillName: 'Selenium',
             level: 0.8,
+
           ),
         ],
       ),
@@ -71,7 +75,15 @@ class Competence extends StatelessWidget {
   Widget _buildSkillCard({
     required String skillName,
     required double level,
+
   }) {
+
+
+    // Déterminez la couleur du texte en fonction du thème actuel
+
+
+
+
     return Card(
       color: Color(0xFFF5EFE6),
       elevation: 3,
@@ -83,7 +95,7 @@ class Competence extends StatelessWidget {
           children: [
             Text(
               skillName,
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.black),
             ),
             SizedBox(height: 8),
             AnimatedProgressBar(
