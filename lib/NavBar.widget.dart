@@ -81,7 +81,7 @@ class _NavBarState extends State<NavBar> {
                             ListTile(
                               leading: Icon(Icons.person, color: Colors.black),
                               title: Text(
-                                'Profile',
+                                'Profil',
                                 style: TextStyle(color: Colors.black),
                               ),
                               onTap: () {

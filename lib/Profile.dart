@@ -18,7 +18,7 @@ class Profile extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Profile',
+          'Profil',
           style: TextStyle(
             fontSize: 25,
             color: Colors.white,
